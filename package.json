@@ -4,6 +4,7 @@
   "description": "API for Reddit Meme Fixer",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "nodemon run app.js"
   },
   "author": "Borsodi Dávid",

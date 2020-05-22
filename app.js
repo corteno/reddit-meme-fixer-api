@@ -12,12 +12,12 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://reddit-meme-fixer.herokuapp.com/meme"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
-app.post('/meme', (req, res) => {
+app.post('/meme', cors(), (req, res) => {
     //res.json({msg: 'This is CORS-enabled for a Single Route'})
     const url = req.body.data;
     if(url) {
